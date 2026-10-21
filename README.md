@@ -11,3 +11,5 @@ Files: `index.html` (page), `app.js` (calculations, input validation, feedback),
 Feedback shares the Guia de Direitos D1 database (`guia-feedback`), tagged `ferramenta = compare`. Bind it in Cloudflare: **Settings › Bindings › Add › D1 database**, variable name `DB`, then retry the deployment.
 
 Hosting: GitHub repository connected to Cloudflare Pages, framework preset **None**, build command and output directory empty. Every commit deploys automatically.
+
+(｡♥‿♥｡)
