@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Compare</title>
+<meta name="description" content="Descubra qual embalagem compensa mais: preço por litro, quilo, metro ou unidade. Sem anúncios, sem cookies, sem cadastro.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="referrer" content="no-referrer">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&amp;display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main class="wrap">
+  <header class="topo">
+    <div>
+      <h1>Compare</h1>
+      <p>Descubra qual embalagem compensa mais. Digite o preço e quanto vem em cada uma: a mais barata aparece em verde.</p>
+    </div>
+    <div class="letra" role="group" aria-label="Tamanho da letra">
+      <button type="button" id="menor" aria-label="Diminuir a letra">A−</button>
+      <button type="button" id="maior" aria-label="Aumentar a letra">A+</button>
+    </div>
+  </header>
+
+
+  <fieldset class="tipo">
+    <legend>O que você vai comparar?</legend>
+    <div class="tipos">
+      <label><input type="radio" name="familia" value="vol" checked><span>Líquido<small>ml ou litro</small></span></label>
+      <label><input type="radio" name="familia" value="peso"><span>Peso<small>grama ou quilo</small></span></label>
+      <label><input type="radio" name="familia" value="comp"><span>Metros<small>papel higiênico, papel-toalha</small></span></label>
+      <label><input type="radio" name="familia" value="un"><span>Unidades<small>ovos, fraldas, pilhas</small></span></label>
+    </div>
+  </fieldset>
+
+  <div id="lista" class="lista"></div>
+
+  <button type="button" class="mais" id="adicionar">
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14"/><path d="M5 12h14"/></svg>
+    Comparar mais um produto
+  </button>
+
+  <section class="resumo" id="resumo" aria-live="polite" aria-atomic="true"></section>
+
+  <section class="feedback" id="feedback" aria-labelledby="fbq" hidden>
+    <div id="fb-pergunta">
+      <h2 id="fbq">Esta comparação te ajudou?</h2>
+      <div class="fb-botoes" role="group" aria-labelledby="fbq">
+        <button type="button" class="fb sim" data-v="sim">
+          <svg width="56" height="56" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="24" cy="24" r="20"/><circle cx="17" cy="19" r="1.5" fill="currentColor"/><circle cx="31" cy="19" r="1.5" fill="currentColor"/><path d="M15 28c2.5 4 5.5 6 9 6s6.5-2 9-6"/></svg>
+          <span>Sim, ajudou</span>
+        </button>
+        <button type="button" class="fb nao" data-v="nao">
+          <svg width="56" height="56" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="24" cy="24" r="20"/><circle cx="17" cy="19" r="1.5" fill="currentColor"/><circle cx="31" cy="19" r="1.5" fill="currentColor"/><path d="M15 34c2.5-4 5.5-6 9-6s6.5 2 9 6"/></svg>
+          <span>Não ajudou</span>
+        </button>
+      </div>
+    </div>
+    <div id="fb-depois" hidden>
+      <p class="fb-ok" id="fb-ok" tabindex="-1">Obrigada!</p>
+      <div class="fb-coment" id="fb-coment">
+        <label for="fb-texto">Quer contar mais? (opcional)</label>
+        <p class="fb-dica" id="fb-dica">O que foi fácil ou difícil? Não escreva nome, telefone ou CPF.</p>
+        <textarea id="fb-texto" maxlength="500" rows="4" aria-describedby="fb-dica fb-conta"></textarea>
+        <p class="fb-conta" id="fb-conta">0 de 500 letras</p>
+        <button type="button" class="btn-enviar" id="fb-enviar" aria-disabled="true">Enviar comentário</button>
+      </div>
+      <p class="fb-ok" id="fb-final" tabindex="-1" hidden>Recebemos seu comentário. Obrigada!</p>
+    </div>
+  </section>
+
+  <button type="button" class="limpar" id="limpar">Apagar tudo e comparar outra coisa</button>
+
+  <footer class="rodape">
+    <p><strong>Sem anúncios. Sem cookies. Nada é guardado.</strong></p>
+    <p>Compara só o preço, não a qualidade. Produto concentrado pode render mais.</p>
+  </footer>
+</main>
+<script src="app.js" defer></script>
+</body>
+</html>
